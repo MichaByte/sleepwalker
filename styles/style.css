@@ -107,10 +107,27 @@ span.line {
   justify-content: center;
   align-items: center;
 }
+/* 
+.dev-profile-icon:hover {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 .pfp {
   border-radius: 50%;
   width: 50px;
+}
+
+.counterspell-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counterspell-logo img {
+  width: 150px;
 }
 
 /* Other */
