@@ -88,23 +88,27 @@ function newLine(content, className) {
 
 function newDialog(image, speaker, text, className) {
   let newLine = document.createElement("div");
+  let textContainer = document.createElement("div");
   let speakerImage = document.createElement("img");
   let speakerName = document.createElement("p");
   let dialogText = document.createElement("p");
 
   speakerImage.src = image;
-  speakerImage.style.width = "300px";
-  speakerImage.style.height = "300px";
+  speakerImage.style.width = "150px";
+  speakerImage.style.height = "150px";
   speakerName.innerHTML = speaker;
   dialogText.innerHTML = text;
 
 
   if (className) newLine.classList.add(className);
   newLine.classList.add("dialog");
+  newLine.style.display = "grid";
+  newLine.style.gridTemplateColumns = "150px auto";
 
   newLine.append(speakerImage);
-  newLine.append(speakerName);
-  newLine.append(dialogText);
+  newLine.append(textContainer);
+  textContainer.append(speakerName);
+  textContainer.append(dialogText);
 
   document.querySelector(".lines").append(newLine);
 
@@ -138,7 +142,7 @@ function gameEvent(eventNumber, input){
   if (eventNumber == 1) {
     if (input == 1){
       newLine(
-       'As you walk around your bedroom you see your lamp is knocked over, and your desk is messy. You seem to be missing your wallet, as well as your spare key. <br> Where would you like to investigate next? <br><br> Press "1" to check out the kitchen'
+       'As you walk around your bedroom you see your lamp is knocked over, and your desk is messy. You seem to be missing your wallet, as well as your spare key. <br> Where would you like to investigate next? <br><br> Press "1" to check out the kitchen. <br> Press "2" to check out the bathroom. <br> Press "3" to leave the house'
       )
 
 
