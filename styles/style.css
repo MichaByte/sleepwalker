@@ -1,3 +1,7 @@
+:root {
+  --terminal-text-color: #39ff14;
+}
+
 @font-face {
   font-family: "HeavyData Nerd Font";
   src: url("/fonts/HeavyDataNF.woff2") format("woff2"),
@@ -61,10 +65,16 @@ h1 {
 }
 
 .terminal-text {
-  color: #39ff14;
+  color: var(--terminal-text-color);
 }
 
 span.line {
   display: block;
   overflow-wrap: break-word;
+}
+
+.dialog {
+  display: block;
+  overflow-wrap: break-word;
+  border: dotted .5em #fff;
 }
