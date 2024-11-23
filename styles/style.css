@@ -23,6 +23,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -35,17 +36,13 @@ h1 {
   font-family: "HeavyData Nerd Font", sans-serif !important;
 }
 
-.pfp {
-  z-index: 999;
-  border-radius: 50%;
-  width: 3vw;
-  height: auto;
-}
-
 /* Terminal */
 .shell {
-  height: 40vh;
+  box-sizing: margin-box;
+  padding: 20px;
+  height: 70vh;
   width: 100vw;
+  overflow-y: scroll;
 }
 
 .current-line {
@@ -76,5 +73,47 @@ span.line {
 .dialog {
   display: block;
   overflow-wrap: break-word;
-  border: dotted .5em #fff;
+  border: dotted 0.5em #fff;
+}
+
+.dialog p {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* Bottom bar */
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  height: 10vh;
+}
+
+.hc-flag {
+  bottom: 0;
+  left: 0;
+  width: 12vw;
+  z-index: 999;
+}
+
+.dev-profile-icon {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pfp {
+  border-radius: 50%;
+  width: 50px;
+}
+
+/* Other */
+.red {
+  color: rgb(255, 56, 56);
 }
