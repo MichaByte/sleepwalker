@@ -43,11 +43,11 @@ function addItemToInventory(item, amount) {
     if (amount === undefined) amount = 1;
     for (let i = 0; i < inventory.length; i++) {
         if (inventory[i][0] === item) {
-            inventory[i][1] += amount || 1;
+            inventory[i][1] += amount;
             return;
         }
     }
-    inventory.push([item, 1]);
+    inventory.push([item, amount]);
     newLine(`Added ${amount} ${item}(s) to inventory`);
 }
 
@@ -66,17 +66,17 @@ function removeItemFromInventory(item, amount) {
 }
 
 function showInventoryDialog() {
-    let inventoryBox = document.createElement("div");  
+    let inventoryBox = document.createElement("div");
     newLine(`Inventory: ${(inventory.length === 0) ? " is empty" : ""}`);
 
-  
+
     inventoryBox.classList.add("dialog");
 
     for (let i = 0; i < inventory.length; i++) {
         let container = document.createElement("div");
         container.style.display = "inline-block";
         let itemInfo = document.createElement("p");
-    
+
         let item = inventory[i][0];
         let quantity = inventory[i][1];
         let itemImage = document.createElement("img");
@@ -92,6 +92,8 @@ function showInventoryDialog() {
         inventoryBox.append(container);
     }
 
+    inventoryBox.classList.add('inventoryBox');
+
     document.querySelector(".lines").append(inventoryBox);
     return inventoryBox;
-  }
+}

@@ -13,10 +13,3 @@ Shameless plug 3 - [@gesutherland] (https://github.com/gesutherland)
 
 
 ![Screenshot](/assets/screenshot.png)
-
-
-**Fixes needed**   
-automatically redirect to same page to get reward (only people needed)  
-autoscroll for quest/inventory dialog  
-can't add multiple things to inventory in one command  
-can pick up items multiple times by revisiting spot

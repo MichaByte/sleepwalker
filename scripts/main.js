@@ -42,11 +42,15 @@ const rooms = {
   },
   oldman: {
     visited: false,
-    happy: false
+    happy: false,
+    collectedReward: false,
+    leavingCoin: false
   },
   femaleneighbor: {
     visited: false,
-    happy: false
+    happy: false,
+    collectedReward: false,
+    leavingMap: false
   }
 }
 
@@ -178,7 +182,10 @@ function oldmanHouse() {
       "oldmanneighbor",
       "Thanks for bringing me that lovely lamp! Oh, by the way, you dropped this while you were out an' about last night."
     );
-    addItemToInventory("key");
+    if (!rooms.oldman.collectedReward) {
+      rooms.oldman.collectedReward = true;
+      addItemToInventory("key");
+    }
     newLine("Press \"1\" to go back outside");
     nextPlaces = ["outside"];
   }
@@ -219,7 +226,10 @@ function leaveOldman() {
     "I believe you went over that way afterward, I was tired and not paying very much attention though. You can go check it out, but I expect you to come back and pay me later!"
   );
   newLine("Oh! There's a coin on the floor, you pick it up.");
-  addItemToInventory("money");
+  if (!rooms.oldman.leavingCoin) {
+    rooms.oldman.leavingCoin = true;
+    addItemToInventory("money");
+  }
   newLine(
     'You start walking in the direction he pointed, and as you walk, you feel the area is vaguely familiar, but you cannot put your finger on it. “I must be starting to remember parts of my sleepwalking”, You think to yourself. After some walking, you come across a stream and you see a tree branch that you could use to cross the stream. You also see a bridge in the distance, but it appears to be a few minutes walk away. What would you like to do? ',
     "",
@@ -282,8 +292,11 @@ function femaleNeighbor() {
       "femaleneighbor",
       "Oh, you brought me some flowers! Thank you so much! I'll go plant them immediately. And, by the way, I've got these lovely plates I don't use anymore, you can have them if they tickle you fancy."
     );
-    addItemToInventory("plate");
-    addItemToInventory("plate");
+    if (rooms.femaleneighbor.collectedReward) {
+      rooms.femaleneighbor.collectedReward = true;
+      addItemToInventory("plate");
+      addItemToInventory("plate");
+    }
     newLine("Press \"1\" to go back outside");
     nextPlaces = ["outside"];
   }
@@ -301,13 +314,16 @@ function angryFemaleNeighbor() {
 function leaveFemaleNeighbor() {
   newDialog("assets/img/femaleneighbor.png", "femaleneighbor", "Ok, but you better let me know if you find out anything. And it\'d be great if you could get me some plants to replace the ones that were stolen.");
   newLine("You continue heading down the road, where you see something flying in the wind. You catch it - it's a map!");
-  addItemToInventory("map");
+  if (!rooms.femaleneighbor.leavingMap) {
+    rooms.femaleneighbor.leavingMap = true;
+    addItemToInventory("map");
+  }
   newLine("You have found a map! Press 'm' to view it.");
 }
 function store() {
   newLine("A shopkeeper welcomes you loudly as you enter the store. The shelves are lined with goods from shoelaces to laced shoes and apple turnovers to turned over apples.");
-  newLine("What would you like to buy?", "", ["Press '1' to buy a lamp.", "Press '2' to buy a flower.", "Press '3' to leave."]);
-  nextPlaces = ["buyLamp", "buyFlower", lastPlace];
+  newLine("What would you like to buy?", "", ["Press '1' to buy a lamp.", "Press '2' to buy a flower.", "Press '3' to go home."]);
+  nextPlaces = ["buyLamp", "buyFlower", "bedroom"];
 }
 function buyLamp() {
   if (itemQuantity("money") >= 2) {

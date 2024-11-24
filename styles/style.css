@@ -213,6 +213,11 @@ span.line {
   left: .6em;
   font-size: 30px;
   text-decoration: none;
-  color: #0ff;
+  color: lightblue;
   z-index: 10;
+}
+
+.inventoryBox {
+  height: 200px; /* Adjust the height as needed */
+  overflow-y: auto;
 }

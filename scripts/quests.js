@@ -29,12 +29,16 @@ function giveItems(person, item, amount) {
         reduceItemsNeeded(person, item, itemsNeeded);
         completeQuest(person, item);
         newLine(`Quest complete!`);
+        goToPlace("3")
+        goSomewhere(lastPlace)
+
         return;
     }
     if (itemsOwned < itemsNeeded) {
         newLine(`You don't have enough ${item}s! Gave ${itemsOwned}, ${people[person].name} still needs ${itemsNeeded - itemsOwned}`);
         reduceItemsNeeded(person, item, itemsOwned);
         removeItemFromInventory(item, itemsOwned);
+        
         return;
     }
     else {
