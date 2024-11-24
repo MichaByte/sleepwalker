@@ -1,10 +1,10 @@
 const inventoryImages = {
-    "key": "https://ih1.redbubble.net/image.2797266866.2128/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
-    "wallet": "https://www.megavoxels.com/wp-content/uploads/2024/07/Pixel-Art-Flower-5.webp",
+    "key": "assets/items/key.png",
+    "wallet": "assets/items/wallet.png",
     "lamp": "https://www.megavoxels.com/wp-content/uploads/2024/07/how-to-make-pixel-art-candy-6.webp",
-    "plate": "https://img.freepik.com/premium-vector/apple-pixel-art-style_553915-88.jpg",
+    "plate": "assets/items/plate.png",
     "silverware": "https://img.freepik.com/premium-vector/apple-pixel-art-style_553915-88.jpg",
-    "soap": "https://cloud-lhqcn70mv-hack-club-bot.vercel.app/0image.png",
+    "soap": "assets/items/soap.png",
     "chair:": "https://cloud-lhqcn70mv-hack-club-bot.vercel.app/0image.png",
     "candy": "https://www.megavoxels.com/wp-content/uploads/2024/07/how-to-make-pixel-art-candy-6.webp"
 }
@@ -24,6 +24,15 @@ function itemQuantity(item) {
         }
     }
     return 0;
+}
+
+function itemWasNeeded(item) {
+    for (let i = 0; i < completedQuests.length; i++) {
+        if (completedQuests[i][0] === item) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function addItemToInventory(item, amount) {

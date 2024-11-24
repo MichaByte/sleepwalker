@@ -1,11 +1,12 @@
 let gameRunning = false;
-let inputSelected = false;
 let event = 1;
 let lastGameInput = 0;
 let activePerson = "you";
-
+let completedQuests = [];
 let quests = [];
 const inventory = [["candy", 2]];
+let nextPlaces = [];
+let activePlace = "bedroom";
 
 const people = {
     "oldmanneighbor": {

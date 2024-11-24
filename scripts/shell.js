@@ -117,8 +117,7 @@ function runCommand(keywords, input) {
         newLine("q: shows quests");
         newLine("trash <item> <amount>: removes item from inventory");
       case "what?":
-        event--;
-        gameEvent(event, lastGameInput);
+        window[activePlace]();
         break;
       case "i":
         showInventoryDialog();
@@ -155,25 +154,28 @@ function runCommand(keywords, input) {
         
       default:
         newLine(
-          "Invalid input. Please type a number to select an option. '1', '2', '3', or 'what?' to have the last text repeatedess."
+          "Invalid input. Please type a number to select an option. '1', '2', '3', or 'what?' to have the last text repeated."
         );
     }
   }
 }
 
-function newLine(content, className, styles) {
-  let newLine = document.createElement("span");
-  newLine.classList.add("line");
-  if (className) newLine.classList.add(className);
-  newLine.innerHTML = content;
-  document.querySelector(".lines").append(newLine);
+function newLine(content, className, options) {
+  let line = document.createElement("span");
+  line.classList.add("line");
+  if (className) line.classList.add(className);
+  line.innerHTML = content;
+  document.querySelector(".lines").append(line);
   let shell = document.getElementById("shell");
   shell.scrollTop = shell.scrollHeight;
-  return newLine;
+
+  for (let i = 0; i < options?.length; i++) {
+    newLine(options[i]);
+  }
+  return line;
 }
 
 function newDialog(image, speaker, text, className) {
-  console.log(speaker)
   let activePerson = speaker;
   let newLine = document.createElement("div");
   let textContainer = document.createElement("div");
