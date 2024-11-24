@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: "HeavyData Nerd Font";
-  src: url("/assets/fonts/HeavyDataNF.woff2") format("woff2"),
-    url("/assets/fonts/HeavyDataNF.woff") format("woff");
+  src: url("https://michabyte.github.io/sleepwalker/assets/fonts/HeavyDataNF.woff2") format("woff2"),
+    url("https://michabyte.github.io/sleepwalker/assets/fonts/HeavyDataNF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: "BigBlueTerminal";
-  src: url("/assets/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
-    url("/assets/fonts/BigBlueTermPlusNFM.woff") format("woff");
+  src: url("https://michabyte.github.io/sleepwalker/assets/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
+    url("https://michabyte.github.io/sleepwalker/assets/fonts/BigBlueTermPlusNFM.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
