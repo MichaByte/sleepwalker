@@ -1,11 +1,10 @@
-console.log("Shell script loaded ✅");
-
 // Terminal code
 let commandHistory = [];
 let commandHistoryIndex = 0;
 let inputElement = document.querySelector(".terminal-input");
 inputElement.value = "";
 inputElement.focus();
+
 
 document.querySelector(".terminal-input").addEventListener("keydown", (e) => {
   if (e.keyCode == 38 || e.keyCode == 40) {
@@ -82,7 +81,6 @@ function runCommand(keywords, input) {
         printNeofetch();
         break;
       case "color":
-        console.log(keywords[1]);
         document.documentElement.style.setProperty(
           "--terminal-text-color",
           keywords[1]
@@ -125,12 +123,25 @@ function runCommand(keywords, input) {
       case "i":
         showInventoryDialog();
         break;
+      case "q":
+        showQuestsDialog();
+        break;
       case "trash":
         if (keywords[1] === undefined) {
             newLine("Trash what?");
             return;
         }
         removeItemFromInventory(keywords[1], keywords[2]);
+        break;
+      case "map":
+        showMapDialog();
+        break;
+      case "goto":
+        if (keywords[1] === undefined) {
+          newLine("Go to where?");
+          return;
+        }
+        goToPlace(keywords[1]);
         break;
       case "1":
         gameInput(1);
@@ -140,13 +151,11 @@ function runCommand(keywords, input) {
         break;
       case "3":
         gameInput(3);
-        break;
-      case "give"
-e();
-        break;
+        break
+        
       default:
         newLine(
-          "Invalid input. Please type a number to select an option. > Pr, or 'what?' to have the last text repeatedess '1', '2', or '3'."
+          "Invalid input. Please type a number to select an option. '1', '2', '3', or 'what?' to have the last text repeatedess '1', '2', or '3'."
         );
     }
   }
@@ -164,6 +173,8 @@ function newLine(content, className, styles) {
 }
 
 function newDialog(image, speaker, text, className) {
+  console.log(speaker)
+  let activePerson = speaker;
   let newLine = document.createElement("div");
   let textContainer = document.createElement("div");
   let speakerImage = document.createElement("img");
@@ -173,7 +184,7 @@ function newDialog(image, speaker, text, className) {
   speakerImage.src = image;
   speakerImage.style.width = "150px";
   speakerImage.style.height = "150px";
-  speakerName.innerHTML = speaker;
+  speakerName.innerHTML = people[speaker].name;
   dialogText.innerHTML = text;
 
   if (className) newLine.classList.add(className);
@@ -188,11 +199,13 @@ function newDialog(image, speaker, text, className) {
 
   document.querySelector(".lines").append(newLine);
 
-  return newLine;
-}
+  let itemsNeededByPerson = itemsNeeded(speaker);
+  if (itemsNeededByPerson) {
+    let itemsNeededString = itemsNeededByPerson.join(", ");
+    return true;
+  }
 
-function newPersonDialog(person, text) {
-  newDialog(`assets/img/${person}.png`, people[person].name, text);
+  return false;
 }
 
 function clearTerminal() {

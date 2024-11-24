@@ -6,7 +6,7 @@ const inventoryImages = {
     "silverware": "https://img.freepik.com/premium-vector/apple-pixel-art-style_553915-88.jpg",
     "soap": "https://cloud-lhqcn70mv-hack-club-bot.vercel.app/0image.png",
     "chair:": "https://cloud-lhqcn70mv-hack-club-bot.vercel.app/0image.png",
-    "candy": ""
+    "candy": "https://www.megavoxels.com/wp-content/uploads/2024/07/how-to-make-pixel-art-candy-6.webp"
 }
 
 function isInInventory(item) {
@@ -15,6 +15,15 @@ function isInInventory(item) {
             return true;
         }
     }
+}
+
+function itemQuantity(item) {
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i][0] === item) {
+            return inventory[i][1];
+        }
+    }
+    return 0;
 }
 
 function addItemToInventory(item, amount) {
@@ -26,7 +35,8 @@ function addItemToInventory(item, amount) {
         }
     }
     inventory.push([item, 1]);
-    newLine(`Added ${amount} ${item}(s)`);
+    if (personNeedsItem("you", item)) giveItems("you", item);
+    newLine(`Added ${amount} ${item}(s) to inventory`);
 }
 
 function removeItemFromInventory(item, amount) {
