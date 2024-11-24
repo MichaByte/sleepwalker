@@ -100,8 +100,24 @@ function bathroom() {
 }
 function outside() {
   newLine(
-    "After investigating all the rooms in your house, you decide to go outside and ask your neighbour, who often likes to sit on the porch and ask him what happened. You know he is retired and does not work, but he does not appear to be home. You knock on the door several times and eventually he comes out. After he sees you, he talks to you.<br>"
+    "After investigating all the rooms in your house, you decide to go outside. From here, you can go to the park or stop by and visit your neighbor.",
+    "",
+    ['Press "1" to go to the park.', 'Press "2" to visit your neighbor.']
   );
+  nextPlaces = ["park", "oldmanHouse"];
+}
+function park() {
+  newLine("It's the park at the end of your neighborhood. There's a walking trail that goes through the woods with benches scattered along either side.");
+  if (!park.visited) {
+    newLine("Oh! It's your wallet lying next to a park bench. You pick it up.");
+    addItemToInventory("wallet");
+    addItemToInventory("money", 3);
+  }
+  newLine('Press "1" to go back');
+  nextPlaces = ["outside"];
+}
+function oldmanHouse() {
+  newLine("You go to talk to your neighbor, who often likes to sit on the porch and ask him what happened. You know he is retired and does not work, but he does not appear to be home. You knock on the door several times and eventually he comes out. After he sees you, he talks to you.");
   let needsSomething = newDialog(
     "assets/img/oldmanneighbor.png",
     "oldmanneighbor",

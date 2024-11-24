@@ -1,12 +1,11 @@
 const inventoryImages = {
     "key": "assets/items/key.png",
     "wallet": "assets/items/wallet.png",
-    "lamp": "https://www.megavoxels.com/wp-content/uploads/2024/07/how-to-make-pixel-art-candy-6.webp",
+    "lamp": "assets/items/lamp.png",
     "plate": "assets/items/plate.png",
-    "silverware": "https://img.freepik.com/premium-vector/apple-pixel-art-style_553915-88.jpg",
     "soap": "assets/items/soap.png",
-    "chair:": "https://cloud-lhqcn70mv-hack-club-bot.vercel.app/0image.png",
-    "candy": "https://www.megavoxels.com/wp-content/uploads/2024/07/how-to-make-pixel-art-candy-6.webp"
+    "money": "assets/items/money.png",
+    "candy": "assets/items/candy.png"
 }
 
 function isInInventory(item) {

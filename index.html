@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleepwalker - A Counterspell Game</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="icon" href="/assets/img/favicon.svg" />
-  </head>
-  <body style="width: 100vw; height: 100vh; overflow: hidden">
-    <a style="font-size: 30px; margin-left: 10px; text-align: left; position: absolute; text-decoration: none; color: #0ff" href="javascript:howtoplay()">?</a>
-    <h1 style="width: 100vw; height: 10vh; text-align: center; font-size: 7vw">
-      Sleepwalker
-    </h1>
 
-    <div class="shell" id="shell">
-      <div class="lines"></div>
-      <div class="current-line">
-        <p><span class="terminal-text">you@sleepwalker.quest:~</span>$&nbsp;</p>
-        <input class="terminal-input" type="text" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleepwalker - A Counterspell Game</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" />
+</head>
+
+<body style="width: 100vw; height: 100vh; overflow: hidden">
+  <a style="font-size: 30px; margin-left: 10px; text-align: left; position: absolute; text-decoration: none; color: #0ff"
+    href="javascript:howtoplay()">?</a>
+  <h1 style="width: 100vw; height: 10vh; text-align: center; font-size: 7vw">
+    Sleepwalker
+  </h1>
+
+  <div class="shell" id="shell" onclick="document.querySelector('.terminal-input').focus()">
+    <div class="lines"></div>
+    <div class="current-line">
+      <p><span class="terminal-text">you@sleepwalker.quest:~</span>$&nbsp;</p>
+      <input class="terminal-input" type="text" />
     </div>
-    <div class="bottom-bar">
-      <a href="https://hackclub.com/" target="_blank"
-        ><img
-          class="hc-flag"
-          src="https://assets.hackclub.com/flag-orpheus-left.svg"
-          alt="Hack Club"
-      /></a>
-      <div class="dev-profile-icon">
-        <a href="https://github.com/isaacfonner" target="_blank"
-          ><img class="pfp" src="/assets/img/isaacfonner.png" alt="GitHub" />
-        </a>
-    
-      </div>
-      <div class="dev-profile-icon">
-        <a href="https://github.com/MichaByte" target="_blank"
-          ><img class="pfp" src="/assets/img/MichaByte.jpg" alt="GitHub" />
-        </a>
-      </div>
-      <div class="dev-profile-icon">
-        <a href="https://github.com/hnasheralneam" target="_blank"
-          ><img class="pfp" src="/assets/img/hnasheralneam.jpg" alt="GitHub" />
-        </a>
-      </div>
-      <div class="dev-profile-icon">
-        <a href="https://github.com/gesutherland" target="_blank"
-          ><img class="pfp" src="/assets/img/gesutherland.jpg" alt="GitHub" />
-        </a>
-      </div>
-      <div class="counterspell-logo">
-        <a href="https://counterspell.hackclub.com/" target="_blank"
-          ><img
-            src="/assets/img/counterspell.png"
-            alt="Counterspell"
-          />
-        </a>
-      </div>
+  </div>
+  <div class="bottom-bar">
+    <a href="https://hackclub.com/" target="_blank"><img class="hc-flag"
+        src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club" /></a>
+    <div class="dev-profile-icon">
+      <a href="https://github.com/isaacfonner" target="_blank"><img class="pfp" src="/assets/img/isaacfonner.png"
+          alt="GitHub" />
+      </a>
+
     </div>
-  </body>
-  <script src="scripts/data.js"></script>
-  <script src="scripts/inventory.js"></script>
-  <script src="scripts/quests.js"></script>
-  <script scr="scripts/map.js"></script>
-  <script src="scripts/shell.js"></script>
-  <script src="scripts/main.js"></script>
+    <div class="dev-profile-icon">
+      <a href="https://github.com/MichaByte" target="_blank"><img class="pfp" src="/assets/img/MichaByte.jpg"
+          alt="GitHub" />
+      </a>
+    </div>
+    <div class="dev-profile-icon">
+      <a href="https://github.com/hnasheralneam" target="_blank">
+        <div class="outer-circle">
+          <div class="inner-circle"></div>
+        </div>
+      </a>
+    </div>
+    <div class="dev-profile-icon">
+      <a href="https://github.com/gesutherland" target="_blank"><img class="pfp" src="/assets/img/gesutherland.jpg"
+          alt="GitHub" />
+      </a>
+    </div>
+    <div class="counterspell-logo">
+      <a href="https://counterspell.hackclub.com/" target="_blank"><img src="/assets/img/counterspell.png"
+          alt="Counterspell" />
+      </a>
+    </div>
+  </div>
+</body>
+<script src="scripts/data.js"></script>
+<script src="scripts/inventory.js"></script>
+<script src="scripts/quests.js"></script>
+<script scr="scripts/map.js"></script>
+<script src="scripts/shell.js"></script>
+<script src="scripts/main.js"></script>
+
 </html>
