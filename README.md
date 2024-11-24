@@ -8,15 +8,14 @@ I'm not sleep deprived, I promise.
 (help they won't let us go, they've locked the doors, they're comi-  
 Thanks to Gus and Josh for hosting the hackathon! We really appreciate it!  
 Shameless plug - [@hnasheralneam](https://github.com/hnasheralneam)  
+Shameless plug 2 - [@isaacfonner](https://github.com/isaacfonner)  
+
 
 ![Screenshot](/assets/screenshot.png)
 
 
 **Fixes needed**   
 automatically redirect to same page to get reward (only people needed)  
-change in directory to show in game  
-at the end get potion of good sleep  
 autoscroll for quest/inventory dialog  
 can't add multiple things to inventory in one command  
-check input value in range (store)
 can get multiple maps, more money

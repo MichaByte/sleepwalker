@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: "HeavyData Nerd Font";
-  src: url("https://michabyte.github.io/sleepwalker/assets/fonts/HeavyDataNF.woff2") format("woff2"),
-    url("https://michabyte.github.io/sleepwalker/assets/fonts/HeavyDataNF.woff") format("woff");
+  src: url("https://sleepwalker.quest/assets/fonts/HeavyDataNF.woff2") format("woff2"),
+    url("https://sleepwalker.quest/assets/fonts/HeavyDataNF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: "BigBlueTerminal";
-  src: url("https://michabyte.github.io/sleepwalker/assets/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
-    url("https://michabyte.github.io/sleepwalker/assets/fonts/BigBlueTermPlusNFM.woff") format("woff");
+  src: url("https://sleepwalker.quest/assets/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
+    url("https://sleepwalker.quest/fonts/BigBlueTermPlusNFM.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -142,11 +142,6 @@ span.line {
   width: 150px;
 }
 
-/* Other */
-.red {
-  color: rgb(255, 56, 56);
-}
-
 /* GH Profile Picture Effect */
 .outer-circle {
   margin: 0;
@@ -182,4 +177,19 @@ span.line {
   50% {
     background-position: 100% 50%;
   }
+}
+
+/* Other */
+.red {
+  color: rgb(255, 56, 56);
+}
+
+.howtoplay-icon {
+  position: fixed;
+  top: .5em;
+  left: .6em;
+  font-size: 30px;
+  text-decoration: none;
+  color: #0ff;
+  z-index: 10;
 }

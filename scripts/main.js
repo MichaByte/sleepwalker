@@ -3,6 +3,7 @@ function startGame() {
   let menutheme = document.getElementById("menutheme");
   menutheme.play();
 
+
   gameRunning = true;
 
   newLine(
@@ -143,7 +144,7 @@ function oldmanHouse() {
     rooms.oldman.happy = true;
     return;
   }
-  newLine("You go to talk to your neighbor, who often likes to sit on the porch, and ask him what happened. You know he is retired and does not work, but he does not appear to be home. You knock on the door several times and eventually he comes out. After he sees you, he yells: <br>");
+  newLine("You go to talk to your neighbor, who often likes to sit on the porch, and ask him what happened. You know he is retired and does not work, but he does not appear to be home. You knock on the door several times and eventually he comes out. After he sees you, he yells:");
   if (!rooms.oldman.visited && !rooms.oldman.happy) {
     rooms.oldman.visited = true;
     newDialog(
