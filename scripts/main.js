@@ -1,12 +1,8 @@
 function startGame() {
   gameRunning = true;
-  newLine( 
-  );
+
   newLine(
     'Welcome to Sleepwalker! You will get options on what to say or do, and you can choose between them by simply typing the number before each option.'
-  );
-  newLine( 
-
   );
   newLine(
     'You wake up and notice you are lying on the ground and not in bed. You look around your room and notice it\'s very out of order. Some of the large furniture has been knocked over. You realize that you must have been sleepwalking. <br> You decide to investigate further.'
@@ -56,7 +52,7 @@ function bedroom() {
         completeQuest("you", "wallet");
         completeQuest("you", "key");
         bedroom();
-        return;    
+        return;
       }
     }
   }
@@ -139,8 +135,11 @@ function park() {
   nextPlaces = ["outside"];
 }
 function oldmanHouse() {
+  if (itemWasNeeded("lamp") && !rooms.oldman.happy) {
+    rooms.oldman.happy = true;
+    return;
+  }
   newLine("You go to talk to your neighbor, who often likes to sit on the porch, and ask him what happened. You know he is retired and does not work, but he does not appear to be home. You knock on the door several times and eventually he comes out. After he sees you, he yells:");
-  if (itemWasNeeded("lamp")) rooms.oldman.happy = true;
   if (!rooms.oldman.visited && !rooms.oldman.happy) {
     rooms.oldman.visited = true;
     newDialog(
@@ -162,7 +161,7 @@ function oldmanHouse() {
       "oldmanneighbor",
       "What do you think you're doing here? I'm not talkin' to you 'till you make amends."
     );
-    if (needsSomething) newLine('Press "g" to give items');
+    if (needsSomething) newLine('Use "g <item>" to give items');
   }
   else {
     newDialog(
@@ -187,7 +186,7 @@ function questionOldman() {
     ['Press "1" to say "Of course I will pay you back, but do you know if I did anything else when I was sleepwalking?"', 'Press "2" to say "We can talk about payment later, but do you know if I did anything else while I was sleepwalking?"']
   );
   nextPlaces = ["leaveOldman", "leaveOldman"];
-  if (needsSomething) newLine('<br>Press "g" to give items');
+  if (needsSomething) newLine('<br>Use "g <item>" to give items');
 }
 function angryOldman() {
   newDialog(
@@ -218,7 +217,7 @@ function leaveOldman() {
     ['Press "1" to cross the thin tree branch', 'Press "2" to walk to the bridge and cross it.']
   );
   nextPlaces = ["crossBranch", "crossBridge"];
-  if (needsSomething) newLine('<br>Press "g" to give items');
+  if (needsSomething) newLine('<br>Use "g <item>" to give items');
 }
 function crossBranch() {
   newLine(
@@ -241,7 +240,7 @@ function crossBridge() {
     "",
     ['Press "1" to say "Why are you so upset?"', 'Press "2" to say "Did you see me around here last night?"']
   );
-  if (needsSomething) newLine('<br>Press "g" to give items');
+  if (needsSomething) newLine('<br>Use "g <item>" to give items');
   nextPlaces = ["femaleNeighbor"];
 }
 function femaleNeighbor() {
@@ -258,7 +257,7 @@ function femaleNeighbor() {
       "",
       ['Press "1" to say "I have been sleep walking recently and was told I came over here, the person who tore out your plants might have been me..."', 'Press "2" to say "I am sorry to hear that, hope you can find who did it."']
     );
-    if (needsSomething) newLine('<br>Press "g" to give items');
+    if (needsSomething) newLine('<br>Use "g <item>" to give items');
   }
   else if (rooms.femaleneighbor.visited && !rooms.femaleneighbor.happy) {
     let needsSomething = newDialog(
@@ -266,7 +265,7 @@ function femaleNeighbor() {
       "femaleneighbor",
       "My beautiful flowers! All gone! If only someone would pull me out of this utter despair."
     );
-    if (needsSomething) newLine('<br>Press "g" to give items');
+    if (needsSomething) newLine('<br>Use "g <item>" to give items');
   }
   else {
     newDialog(

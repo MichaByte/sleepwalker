@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: "HeavyData Nerd Font";
-  src: url("/fonts/HeavyDataNF.woff2") format("woff2"),
-    url("/fonts/HeavyDataNF.woff") format("woff");
+  src: url("/assets/fonts/HeavyDataNF.woff2") format("woff2"),
+    url("/assets/fonts/HeavyDataNF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: "BigBlueTerminal";
-  src: url("/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
-    url("/fonts/BigBlueTermPlusNFM.woff") format("woff");
+  src: url("/assets/fonts/BigBlueTermPlusNFM.woff2") format("woff2"),
+    url("/assets/fonts/BigBlueTermPlusNFM.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -168,7 +168,7 @@ span.line {
   height: 50px;
   width: 50px;
   background-size: 50px;
-  background-image: url('/assets/img/hnasheralneam.jpg');
+  background-image: url('../assets/img/hnasheralneam.jpg');
   border-radius: 50%;
   transition: .2s;
   box-shadow: 0 0 .2em #000;

@@ -12,16 +12,14 @@ Shameless plug - [@hnasheralneam](https://github.com/hnasheralneam)
 ![Screenshot](/assets/screenshot.png)
 
 
-**Major fixes needed**  
-automatically redirect to same page to get reward (only people needed)
-
-**Minor fixes needed** 
+**Fixes needed**   
+automatically redirect to same page to get reward (only people needed)  
 change in directory to show in game  
 at the end get potion of good sleep  
 autoscroll for quest/inventory dialog  
 uses dev name for "not enough" dialog  
-restart game without reload
-any sort of saving  
-can't add multiple things to inventory in one command
-plate and key not working
-check input value in range
+restart game without reload  
+can't add multiple things to inventory in one command  
+plate and key images not working  
+check input value in range  
+music broken
