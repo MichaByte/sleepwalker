@@ -8,5 +8,5 @@ function showMap() {
 }
 
 function goToPlace(number) {
-    eventNumber == 1
+    //
 }

@@ -155,7 +155,7 @@ function runCommand(keywords, input) {
         
       default:
         newLine(
-          "Invalid input. Please type a number to select an option. '1', '2', '3', or 'what?' to have the last text repeatedess '1', '2', or '3'."
+          "Invalid input. Please type a number to select an option. '1', '2', '3', or 'what?' to have the last text repeatedess."
         );
     }
   }

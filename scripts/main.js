@@ -168,7 +168,7 @@ function gameEvent(eventNumber, input) {
         '<br>You have lost the game. Press "1" to reset. You will need to run the command "start" again. <br> ',
         "red"
       );
-      
+
       // the new person dialog doesnt work
       event = "death";
     } else if (input == 2) {
@@ -188,8 +188,12 @@ function endGame() {
 }
 
 function howtoplay() {
+  if (document.getElementsByClassName("play")[0]) {
+    var instructions = document.getElementsByClassName("play")[0]
+    instructions.remove()
+  } else {
 
-  newLine(`Welcome to Sleepwalker! Navigate a world of mysteries and challenges to complete your quest and make things right with your neighbors. Here’s how: <br><br>
+    newLine(`Welcome to Sleepwalker! Navigate a world of mysteries and challenges to complete your quest and make things right with your neighbors. Here’s how: <br><br>
 Getting Started:
 <br>
 <br>
@@ -221,5 +225,6 @@ Keep an eye out for hidden bonuses or shortcuts.
 <br>
 Use headphones for a fully immersive experience.
 `, "play")
-console.log(document.getElementsByClassName("play"))
   }
+  console.log(document.getElementsByClassName("play")[0])
+}
