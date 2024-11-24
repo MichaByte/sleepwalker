@@ -69,7 +69,7 @@ function runCommand(keywords, input) {
       break;
     case "about":
       newLine(
-        "Welcome to Sleepwalker, a text adventure game developed in 24 hours (help my teammates are sleeping or playing Minecraft) for Hackclub Counterspell, Washington DC."
+        "Welcome to Sleepwalker, a text adventure game developed in 24 hours (help all my teammates are sleeping) for Hackclub Counterspell, Washington DC."
       );
       break;
     case "time":
@@ -120,7 +120,11 @@ function runGameCommand(keywords, input) {
       newLine("what?: repeats the last text");
       newLine("i: shows inventory");
       newLine("q: shows quests");
+      if (hasItem("map")) newLine("m: show map");
+      if (hasItem("map")) newLine("goto <number>: move to a location");
+      newLine("g <item> <amount>: gives item to person");
       newLine("trash <item> <amount>: removes item from inventory");
+      newLine("exit: exits the game");
     case "what?":
       window[activePlace]();
       break;
@@ -142,14 +146,29 @@ function runGameCommand(keywords, input) {
       break;
     case "m":
     case "map":
-      showMapDialog();
+      if (hasItem("map")) showMapDialog();
+      else newLine("You don't have a map");
       break;
     case "goto":
+      if (hasItem("map")) {
+        if (keywords[1] === undefined) {
+          newLine("Go to where?");
+          return;
+        }
+        goToPlace(keywords[1]);
+      }
+      else newLine("But you don't have a map");
+      break;
+    case "g":
+    case "give":
       if (keywords[1] === undefined) {
-        newLine("Go to where?");
+        newLine("Give what?");
+        window[activePlace]();
         return;
       }
-      goToPlace(keywords[1]);
+      let amount = keywords[2] || 1;
+      giveItems(activePerson, keywords[1], amount);
+
       break;
     case "1":
       gameInput(1);
@@ -184,7 +203,7 @@ function newLine(content, className, options) {
 }
 
 function newDialog(image, speaker, text, className) {
-  let activePerson = speaker;
+  activePerson = speaker;
   let newLine = document.createElement("div");
   let textContainer = document.createElement("div");
   let speakerImage = document.createElement("img");
@@ -249,4 +268,36 @@ function printNeofetch() {
              .%%%%%%%%%%%%%.                 <br>
              `.replace(/ /g, "&nbsp;")
   );
+}
+
+// Map
+function showMapDialog() {
+  newLine("Use goto <number> to move to a location.");
+  newLine("1. home");
+  newLine("2. old man's house");
+  newLine("3. woman's house");
+  newLine("4. park");
+  newLine("5. store");
+}
+
+function goToPlace(number) {
+  let place = "";
+  switch (number) {
+      case "1":
+          place = "bedroom";
+          break;
+      case "2":
+          place = "oldmanHouse";
+          break;
+      case "3":
+          place = "femaleNeighbor";
+          break;
+      case "4":
+          place = "park";
+          break;
+      case "5":
+          place = "store";
+          break;
+  }
+  goSomewhere(place);
 }

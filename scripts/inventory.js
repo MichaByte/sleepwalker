@@ -5,7 +5,9 @@ const inventoryImages = {
     "plate": "assets/items/plate.png",
     "soap": "assets/items/soap.png",
     "money": "assets/items/money.png",
-    "candy": "assets/items/candy.png"
+    "candy": "assets/items/candy.png",
+    "map": "assets/items/map.png",
+    "flower": "assets/items/flower.png"
 }
 
 function isInInventory(item) {
@@ -25,9 +27,13 @@ function itemQuantity(item) {
     return 0;
 }
 
+function hasItem(item) {
+    return itemQuantity(item) > 0;
+}
+
 function itemWasNeeded(item) {
     for (let i = 0; i < completedQuests.length; i++) {
-        if (completedQuests[i][0] === item) {
+        if (completedQuests[i].includes(item)) {
             return true;
         }
     }
@@ -38,12 +44,11 @@ function addItemToInventory(item, amount) {
     if (amount === undefined) amount = 1;
     for (let i = 0; i < inventory.length; i++) {
         if (inventory[i][0] === item) {
-            inventory[i][1] += amount;
+            inventory[i][1] += amount || 1;
             return;
         }
     }
     inventory.push([item, 1]);
-    if (personNeedsItem("you", item)) giveItems("you", item);
     newLine(`Added ${amount} ${item}(s) to inventory`);
 }
 

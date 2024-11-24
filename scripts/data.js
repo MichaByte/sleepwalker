@@ -6,6 +6,7 @@ let completedQuests = [];
 let quests = [];
 const inventory = [["candy", 2]];
 let nextPlaces = [];
+let lastPlace = "bedroom";
 let activePlace = "bedroom";
 
 const people = {

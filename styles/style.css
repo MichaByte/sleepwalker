@@ -35,7 +35,18 @@ body {
 
 h1 {
   font-family: "HeavyData Nerd Font", sans-serif !important;
-}
+
+  position: relative; /* Default behavior for scrolling */
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  font-size: 7vw;
+  background-color: #012; /* Solid background color */
+  color: white;
+  margin: 0;
+  line-height: 10vh;
+  
+  }
 
 /* Terminal */
 .shell {

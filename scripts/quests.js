@@ -1,4 +1,5 @@
 function addQuest(personFor, text, item, amount) {
+    newLine(`Added quest! View it with "q"`);
     if (questDoesNotExist(text)) {
         newLine("Added new quest! Press \"q\" to see it");
         quests.push([personFor, text, item, amount])    
@@ -14,7 +15,7 @@ function questDoesNotExist(text) {
     return true;
 }
 
-function giveItems(person, item, amount) { // amount should be optional!
+function giveItems(person, item, amount) {
     if (!personNeedsItem(person, item)) {
         newLine(`${person} doesn't want your useless ${item}!`);
         return;
@@ -27,6 +28,7 @@ function giveItems(person, item, amount) { // amount should be optional!
         newLine(`Gave ${person} ${itemsNeeded} ${item}s!`);
         removeItemFromInventory(item, itemsNeeded);
         reduceItemsNeeded(person, item, itemsNeeded);
+        completeQuest(person, item);
         newLine(`Quest complete!`);
         return;
     }
@@ -48,6 +50,11 @@ function giveItems(person, item, amount) { // amount should be optional!
             }
         }
     }    
+}
+
+function completeQuest(person, item) {
+    let quest = quests.splice(quests.indexOf([person, item]), 1)[0];
+    completedQuests.push(quest);
 }
 
 function itemsNeeded(person) {

@@ -12,7 +12,16 @@ Shameless plug - [@hnasheralneam](https://github.com/hnasheralneam)
 ![Screenshot](/assets/screenshot.png)
 
 
-## To-do - IMPORTANT
-make sure people actually do the stuff before it says room is clean
-Make sure all rooms can be completed (get key)
-add challenge to get item for old man, woman (give lamp to man, 3 flowers to woman - both at shop)
+**Major fixes needed**  
+automatically redirect to same page to get reward (only people needed)
+
+**Minor fixes needed** 
+change in directory to show in game  
+at the end get potion of good sleep  
+autoscroll for quest/inventory dialog  
+uses dev name for "not enough" dialog  
+restart game without reload
+any sort of saving  
+can't add multiple things to inventory in one command
+plate and key not working
+check input value in range
