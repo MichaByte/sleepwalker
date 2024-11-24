@@ -1,5 +1,6 @@
 :root {
   --terminal-text-color: #39ff14;
+  --background-color: #012;
 }
 
 @font-face {
@@ -27,7 +28,7 @@
 }
 
 body {
-  background-color: #012;
+  background-color: var(--background-color);
   color: #fff;
   font-family: "BigBlueTerminal", monospace;
 }
@@ -40,7 +41,7 @@ h1 {
 .shell {
   box-sizing: margin-box;
   padding: 20px;
-  height: 70vh;
+  height: 80vh;
   width: 100vw;
   overflow-y: scroll;
 }
@@ -106,14 +107,12 @@ span.line {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .2s;
 }
-/* 
+
 .dev-profile-icon:hover {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+  transform: scale(1.1);
+}
 
 .pfp {
   border-radius: 50%;
