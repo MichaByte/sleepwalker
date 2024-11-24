@@ -17,9 +17,6 @@ automatically redirect to same page to get reward (only people needed)
 change in directory to show in game  
 at the end get potion of good sleep  
 autoscroll for quest/inventory dialog  
-uses dev name for "not enough" dialog  
-restart game without reload  
 can't add multiple things to inventory in one command  
-plate and key images not working  
-check input value in range  
-music broken
+check input value in range (store)
+can get multiple maps, more money

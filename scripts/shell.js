@@ -6,6 +6,11 @@ inputElement.value = "";
 inputElement.focus();
 
 
+
+
+
+
+
 document.querySelector(".terminal-input").addEventListener("keydown", (e) => {
   if (e.keyCode == 38 || e.keyCode == 40) {
     commandHistory.push("");
@@ -34,7 +39,7 @@ document.querySelector(".terminal-input").addEventListener("keydown", (e) => {
 
   let inputLine = document.createElement("div");
 
-  inputLine.innerHTML = `<span class="terminal-text">you@sleepwalker.quest:~</span>$&nbsp;<span class="terminal-input" style="inline-block">${input}</span>`;
+  inputLine.innerHTML = `<span class="terminal-text">you@sleepwalker.quest:~$&nbsp;<span class="terminal-input" style="inline-block">${input}</span>`;
   newLine(inputLine.innerHTML);
 
   let keywords = input.split(" ");
@@ -121,8 +126,8 @@ function runGameCommand(keywords, input) {
       newLine("i: shows inventory");
       newLine("q: shows quests");
       if (hasItem("map")) newLine("m: show map");
-      if (hasItem("map")) newLine("goto <number>: move to a location");
-      newLine("g <item> <amount>: gives item to person");
+      if (hasItem("map")) newLine("goto &#60;number>: move to a location");
+      newLine("g &#60;item> &#60;amount>: gives item to person");
       newLine("trash <item> <amount>: removes item from inventory");
       newLine("exit: exits the game");
     case "what?":
@@ -298,6 +303,9 @@ function goToPlace(number) {
       case "5":
           place = "store";
           break;
+      default:
+          newLine("Invalid location");
+          return;
   }
   goSomewhere(place);
 }

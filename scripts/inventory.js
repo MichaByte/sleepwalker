@@ -1,9 +1,8 @@
 const inventoryImages = {
-    "key": "assets/items/key.png",
+    "key": "assets/items/pixel key.png",
     "wallet": "assets/items/wallet.png",
     "lamp": "assets/items/lamp.png",
-    "plate": "assets/items/plate.png",
-    "soap": "assets/items/soap.png",
+    "plate": "assets/items/pixel plate.png",
     "money": "assets/items/money.png",
     "candy": "assets/items/candy.png",
     "map": "assets/items/map.png",
@@ -64,7 +63,6 @@ function removeItemFromInventory(item, amount) {
             return;
         }
     }
-    newLine("You don't a(n) " + item);
 }
 
 function showInventoryDialog() {

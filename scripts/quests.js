@@ -1,5 +1,4 @@
 function addQuest(personFor, text, item, amount) {
-    newLine(`Added quest! View it with "q"`);
     if (questDoesNotExist(text)) {
         newLine("Added new quest! Press \"q\" to see it");
         quests.push([personFor, text, item, amount])    
@@ -17,7 +16,7 @@ function questDoesNotExist(text) {
 
 function giveItems(person, item, amount) {
     if (!personNeedsItem(person, item)) {
-        newLine(`${person} doesn't want your useless ${item}!`);
+        newLine(`${people["person"].name} doesn't want your useless ${item}!`);
         return;
     }
 
@@ -33,13 +32,13 @@ function giveItems(person, item, amount) {
         return;
     }
     if (itemsOwned < itemsNeeded) {
-        newLine(`You don't have enough ${item}s! Gave ${itemsOwned}, ${person} still needs ${itemsNeeded - itemsOwned}`);
+        newLine(`You don't have enough ${item}s! Gave ${itemsOwned}, ${people[person].name} still needs ${itemsNeeded - itemsOwned}`);
         reduceItemsNeeded(person, item, itemsOwned);
         removeItemFromInventory(item, itemsOwned);
         return;
     }
     else {
-        newLine("You don't have any ${item}, go and get some");
+        newLine(`You don't have any ${item}, go and get some`);
     }
 
     function reduceItemsNeeded(person, item, amount) {
