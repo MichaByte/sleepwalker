@@ -163,7 +163,6 @@ span.line {
   height: 50px;
   width: 50px;
   background-size: 50px;
-  background-image: url('../assets/img/hnasheralneam.jpg');
   border-radius: 50%;
   transition: .2s;
   box-shadow: 0 0 .2em #000;
@@ -171,6 +170,30 @@ span.line {
 
 .outer-circle:hover .inner-circle {
   transform: scale(0.87);
+}
+
+.dev-profile-pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5em;
+}
+
+.isa {
+  background-color: var(--background-color);
+  background-image: url("../assets/img/isaacfonner.png")
+}
+
+.mra {
+  background-image: url('../assets/img/MichaByte.jpg');
+}
+
+.hna {
+  background-image: url('../assets/img/hnasheralneam.jpg');
+}
+
+.ges {
+  background-image: url('../assets/img/gesutherland.jpg');
 }
 
 @keyframes moveGradient {

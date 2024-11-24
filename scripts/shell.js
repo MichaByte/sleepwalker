@@ -201,9 +201,14 @@ function newLine(content, className, options) {
   let shell = document.getElementById("shell");
   shell.scrollTop = shell.scrollHeight;
 
-  for (let i = 0; i < options?.length; i++) {
-    newLine(options[i]);
+  if (options) {
+    newLine("<br>");
+    for (let i = 0; i < options.length; i++) {
+      newLine(options[i]);
+    }
+    newLine("<br>");
   }
+
   return line;
 }
 
@@ -277,12 +282,12 @@ function printNeofetch() {
 
 // Map
 function showMapDialog() {
-  newLine("Use goto <number> to move to a location.");
   newLine("1. home");
   newLine("2. old man's house");
   newLine("3. woman's house");
   newLine("4. park");
   newLine("5. store");
+  newLine("Use goto &#60;number> to move to a location.");
 }
 
 function goToPlace(number) {

@@ -5,10 +5,11 @@ You've woken up, and something's wrong - no, everything's wrong! Your house is i
 
 Made by Isaac, Hamza, Micha, and Gabrielle.  
 I'm not sleep deprived, I promise.  
-(help they won't let us go, they've locked the doors, they're comi-  
+(help they won't let us go, they've locked the doors, they're comi-)  
 Thanks to Gus and Josh for hosting the hackathon! We really appreciate it!  
 Shameless plug - [@hnasheralneam](https://github.com/hnasheralneam)  
 Shameless plug 2 - [@isaacfonner](https://github.com/isaacfonner)  
+Shameless plug 3 - [@gesutherland] (https://github.com/gesutherland)
 
 
 ![Screenshot](/assets/screenshot.png)
@@ -18,4 +19,4 @@ Shameless plug 2 - [@isaacfonner](https://github.com/isaacfonner)
 automatically redirect to same page to get reward (only people needed)  
 autoscroll for quest/inventory dialog  
 can't add multiple things to inventory in one command  
-can get multiple maps, more money
+can pick up items multiple times by revisiting spot
