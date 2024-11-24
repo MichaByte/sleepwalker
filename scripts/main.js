@@ -143,6 +143,7 @@ function park() {
     addItemToInventory("money");
     addItemToInventory("money");
     addItemToInventory("money");
+    addItemToInventory("money");
   }
   newLine('Press "1" to go back');
   nextPlaces = ["outside"];
